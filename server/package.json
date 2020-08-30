@@ -1,0 +1,26 @@
+{
+  "name": "petcare-server",
+  "version": "1.0.0",
+  "description": "a graphql server for petcare portal",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "frontend": "cd ../frontend && npm run serve",
+    "dev": "concurrently --names \"server,frontend\" \"npm run server --silent\" \"npm run frontend --silent\""
+  },
+  "author": "Ashiquzzaman Khan",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.16.1",
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "mongoose": "^5.9.28"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}

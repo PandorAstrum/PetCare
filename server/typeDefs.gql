@@ -1,0 +1,47 @@
+type User {
+  _id: ID
+  username: String!
+  email: String!
+  password: String!
+  avatar: String
+  joinDate: String
+  favourites: [Pet]
+}
+
+type Pet {
+  _id: ID
+  name: String!
+  categories: String!
+  gender: String!
+  age: Int!
+  description: String
+  createdAt: String
+  imageUrl: [String]
+  likes: Int
+  OwnedBy: User!
+  messages: [Message]
+}
+
+type Message {
+  _id: ID
+  messageBody: String!
+  messageBy: User!
+  messageDate: String
+}
+
+type Query {
+  allUser: [User]!
+  allPet: [Pet]!
+  getUser: User!
+  getPet: Pet!
+}
+type Mutation {
+  addUser(username: String!, email: String!, password: String!): User!
+  addPet(
+    name: String!
+    categories: String!
+    gender: String!
+    age: Int!
+    OwnerID: ID!
+  ): Pet!
+}
